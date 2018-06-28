@@ -1,9 +1,8 @@
 ext {
     // Android
-    androidCompileSdkVersion = 28
     androidMinSdkVersion = 19
+    androidCompileSdkVersion = 28
     androidTargetSdkVersion = 28
-    androidBuildToolsVersion = '28.0.0'
     kotlinVersion = '1.2.50'
 
     // Libraries
@@ -11,21 +10,41 @@ ext {
     rxJavaVersion = '2.0.2'
     javaxAnnnotationVersion = '1.0'
     javaxInjectVersion = '1'
+    rxKotlinVersion = '2.1.0'
+    androidAnnotationsVersion = '21.0.3'
+    daggerVersion = '2.11'
 
     // Testing
     jUnitVersion = '4.12'
     assertJVersion = '3.8.0'
     mockitoKotlinVersion = '1.5.0'
+    robolectricVersion = '3.4.2'
+    mockitoVersion = '1.9.5'
 
     domainDependencies = [
             javaAnnotation: "javax.annotation:jsr250-api:${javaxAnnnotationVersion}",
             javaInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
-            rxJava        : "io.reactivex.rxjava2:rxkotlin:${rxJavaVersion}"
+            rxJava        : "io.reactivex.rxjava2:rxkotlin:${rxJavaVersion}",
     ]
 
     domainTestDependencies = [
             junit  : "junit:junit:${jUnitVersion}",
             mockito: "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
-            assertj: "org.assertj:assertj-core:${assertJVersion}"
+            assertj: "org.assertj:assertj-core:${assertJVersion}",
+    ]
+
+    dataDependencies = [
+            rxKotlin      : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin        : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            javaAnnotation: "javax.annotation:jsr250-api:${javaxAnnnotationVersion}",
+            javaInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
+    ]
+
+    dataTestDependencies = [
+            kotlinJUnit: "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}",
+            junit      : "junit:junit:${jUnitVersion}",
+            mockito    : "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
+            assertj    : "org.assertj:assertj-core:${assertJVersion}",
+            robolectric: "org.robolectric:robolectric:${robolectricVersion}",
     ]
 }
