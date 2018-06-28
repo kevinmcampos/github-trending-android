@@ -14,8 +14,12 @@ import org.mockito.MockitoAnnotations
 class GetProjectsTest {
 
     lateinit var getProjects: GetProjects
-    @Mock lateinit var projectsRepository: ProjectsRepository
-    @Mock lateinit var postExecutionThread: PostExecutionThread
+
+    @Mock
+    lateinit var projectsRepository: ProjectsRepository
+
+    @Mock
+    lateinit var postExecutionThread: PostExecutionThread
 
     @Before
     fun setup() {
