@@ -7,7 +7,7 @@ import me.kevincampos.data.repository.ProjectsDataSource
 import me.kevincampos.data.repository.ProjectsRemote
 import javax.inject.Inject
 
-class ProjectsRemoteDataStore @Inject constructor(
+open class ProjectsRemoteDataStore @Inject constructor(
         private val projectsRemote: ProjectsRemote
 ): ProjectsDataSource {
 
