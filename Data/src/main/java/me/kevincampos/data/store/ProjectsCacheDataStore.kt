@@ -4,12 +4,12 @@ import io.reactivex.Completable
 import io.reactivex.Observable
 import me.kevincampos.data.model.ProjectEntity
 import me.kevincampos.data.repository.ProjectsCache
-import me.kevincampos.data.repository.ProjectsDataSource
+import me.kevincampos.data.repository.ProjectsDataStore
 import javax.inject.Inject
 
 open class ProjectsCacheDataStore @Inject constructor(
         private val projectsCache: ProjectsCache
-) : ProjectsDataSource {
+) : ProjectsDataStore {
 
     override fun getProjects(): Observable<List<ProjectEntity>> {
         return projectsCache.getProjects()

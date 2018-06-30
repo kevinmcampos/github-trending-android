@@ -3,13 +3,13 @@ package me.kevincampos.data.store
 import io.reactivex.Completable
 import io.reactivex.Observable
 import me.kevincampos.data.model.ProjectEntity
-import me.kevincampos.data.repository.ProjectsDataSource
+import me.kevincampos.data.repository.ProjectsDataStore
 import me.kevincampos.data.repository.ProjectsRemote
 import javax.inject.Inject
 
 open class ProjectsRemoteDataStore @Inject constructor(
         private val projectsRemote: ProjectsRemote
-): ProjectsDataSource {
+): ProjectsDataStore {
 
     override fun getProjects(): Observable<List<ProjectEntity>> {
         return projectsRemote.getProjects()

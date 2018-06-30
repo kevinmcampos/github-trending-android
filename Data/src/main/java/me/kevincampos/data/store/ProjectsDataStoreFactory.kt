@@ -1,6 +1,6 @@
 package me.kevincampos.data.store
 
-import me.kevincampos.data.repository.ProjectsDataSource
+import me.kevincampos.data.repository.ProjectsDataStore
 import javax.inject.Inject
 
 open class ProjectsDataStoreFactory @Inject constructor(
@@ -8,7 +8,7 @@ open class ProjectsDataStoreFactory @Inject constructor(
         private val projectsRemoteDataStore: ProjectsRemoteDataStore
 ) {
 
-    open fun getDataStore(projectsCached: Boolean, cacheExpired: Boolean): ProjectsDataSource {
+    open fun getDataStore(projectsCached: Boolean, cacheExpired: Boolean): ProjectsDataStore {
         return if (projectsCached && !cacheExpired) {
             projectsCacheDataStore
         } else {
@@ -16,7 +16,7 @@ open class ProjectsDataStoreFactory @Inject constructor(
         }
     }
 
-    open fun getCacheDataStore() : ProjectsDataSource {
+    open fun getCacheDataStore() : ProjectsDataStore {
         return projectsCacheDataStore
     }
 
